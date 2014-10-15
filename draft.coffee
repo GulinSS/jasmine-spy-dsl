@@ -22,11 +22,3 @@ $bx = ->
         env.beforeEach module ($provide) ->
           _.tap undefined, ->
             _.each definitions, (o, k) -> $provide.value k, o
-
-_.extend $bx,
-  chainInstance: (instance, fnAssetsPredefined) ->
-    (fnAssets) ->
-      instance ->
-        fnAssetsPredefined.call this
-        fnAssets.call this
-
