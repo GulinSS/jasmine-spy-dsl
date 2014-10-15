@@ -11,7 +11,8 @@ describe '...', ->
     rest =      logout:     $bx().spy -> RSVP.defer()
     modal =                 $bx().spy()
     $storage =              $bx().spies 'get', 'set', 'isExist', 'remove'
-    $window =               _.extend $bx().spies('addEventListener', 'removeEventListener'),
+    $window =               _.extend $bx().spies('addEventListener', 
+                                                 'removeEventListener'),
                               open: $bx().spy ->
                                 focus: $bx().spy()
                                 close: $bx().spy()
