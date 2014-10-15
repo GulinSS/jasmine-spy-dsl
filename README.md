@@ -17,14 +17,6 @@ describe '...', ->
                                 focus: $bx().spy()
                                 close: $bx().spy()
 
-    $bx().register
-      $q: RSVP
-      $window:    $window
-      $radio:     $radio
-      rest:       rest
-      modal:      modal
-      $storage:   $storage
-
   ...
     expect($radio.broadcast.callCount).to.equal 0
     rest.logout.$bxResult.resolve()
@@ -34,18 +26,10 @@ describe '...', ->
 ```coffee
 describe '...', ->
   $modal =  $bx().spy -> $bx().spies 'hide', 'show'
-
-  $bx().register
-    $modal: $modal
-
 ```
 
 ```coffee
 describe '...', ->
   $location =   $bx().spies 'url'
   $rootScope =  $bx().spies '$on'
-
-  $bx().register
-    $rootScope: $rootScope
-    $location:  $location
 ```
