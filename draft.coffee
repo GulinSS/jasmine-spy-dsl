@@ -18,7 +18,3 @@ $bx = ->
         _.tap {}, (o) ->
           _.each names, (name) -> o[name] = result.spy()
 
-      register: (definitions) ->
-        env.beforeEach module ($provide) ->
-          _.tap undefined, ->
-            _.each definitions, (o, k) -> $provide.value k, o
